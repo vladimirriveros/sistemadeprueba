@@ -11,7 +11,7 @@
             <p class="text-muted small m-0">Administración de categorías para clasificar productos.</p>
         </div>
         <button class="btn text-white d-flex align-items-center" style="background-color: #F97316;" data-bs-toggle="modal" data-bs-target="#modalCrear">
-            <i class="bi bi-plus-circle me-2"></i> Nueva Categoría
+            <i class="bi bi-plus-circle me-2"></i>Registrar nueva Categoría
         </button>
     </div>
 
@@ -36,8 +36,8 @@
                     <thead class="table-light text-secondary" style="font-size: 0.85rem;">
                         <tr>
                             <th class="ps-4">#</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
+                            <th>Nombre de la categoria</th>
+                            <th>Descripción de la categoria</th>
                             {{-- <th class="text-center">Estado</th> --}}
                             <th class="text-end pe-4">Acciones</th>
                         </tr>
