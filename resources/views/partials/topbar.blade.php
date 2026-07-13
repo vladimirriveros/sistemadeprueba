@@ -1,56 +1,51 @@
-<nav class="navbar navbar-expand navbar-light navbar-custom px-4 py-2">
-    <div class="d-flex align-items-center flex-grow-1">
-        {{-- <button class="btn btn-outline-secondary btn-sm border-0 me-3" id="menu-toggle">
-            <i class="bi bi-arrow-left-right fs-5"></i>
-        </button> --}}
+<header class="topbar">
+    <div class="topbar-left">
+        <button class="btn-toggle-sidebar" aria-label="Toggle sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
 
-        <button class="btn btn-outline-secondary btn-sm border-0 me-3" id="menu-toggle">
-    <i class="bi bi-arrow-left-right fs-5"></i>
-</button>
-
-        <div class="input-group d-none d-md-flex" style="width: 300px;">
-            <input type="text" class="form-control form-control-sm border-end-0 bg-light"
-                placeholder="Buscar Historia o Cama...">
-            <span class="input-group-text bg-light border-start-0 text-muted">
-                <i class="bi bi-search btn-sm p-0"></i>
-            </span>
+        <div class="d-none d-md-block">
+            <h6 class="mb-0 fw-semibold">Dashboard</h6>
+            <small class="text-muted" style="font-size: 0.7rem;">Bienvenido de vuelta</small>
         </div>
     </div>
 
-    <div class="d-none d-lg-flex align-items-center me-4 text-muted fw-medium" style="font-size: 0.85rem;">
-        <i class="bi bi-building-geometric me-2" style="color: var(--color-orange);"></i>
-        Campus Central - Módulo A
-    </div>
+    <div class="topbar-right">
+        <!-- Buscador (opcional) -->
+        <form class="d-none d-md-flex align-items-center" style="position: relative;">
+            <input type="text" class="form-control form-control-sm" placeholder="Buscar..." style="width: 200px; border-radius: 20px; padding-left: 35px;">
+            <i class="fas fa-search" style="position: absolute; left: 12px; color: #9ca3af; font-size: 0.8rem;"></i>
+        </form>
 
-    <button id="themeToggleBtn" class="btn btn-sm btn-outline-secondary px-3 py-2 d-flex align-items-center gap-2" onclick="toggleTheme()">
-    <i id="themeIcon" class="bi bi-moon-fill"></i>
-    <span id="themeText">Modo Oscuro</span>
-</button>
+        <!-- Notificaciones -->
+        <div class="notification-badge">
+            <i class="fas fa-bell fs-5 text-secondary"></i>
+            <span class="badge">3</span>
+        </div>
 
-    <div class="navbar-nav ms-auto align-items-center">
+        <!-- Dropdown de usuario -->
         <div class="dropdown">
-            <a class="nav-link d-flex align-items-center py-0" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <div class="text-end d-none d-sm-block me-2">
-                    <div class="text-dark fw-bold" style="font-size: 0.85rem;">{{ Auth::user()->name ?? 'Usuario' }}</div>
-                    <small class="text-muted d-block" style="font-size: 0.75rem;">ID: #{{ Auth::user()->id ?? 'N/A' }}</small>
-                </div>
-                <i class="bi bi-chevron-down text-muted fs-7"></i>
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="avatar">AD</div>
+                <span class="user-name">Admin</span>
             </a>
-            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2">
-                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">
-                    <i class="bi bi-person me-2" style="color: var(--color-orange);"></i> Mi Perfil
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                <li><a class="dropdown-item" href="#">
+                    <i class="fas fa-user me-2"></i> Mi Perfil
+                </a></li>
+                <li><a class="dropdown-item" href="#">
+                    <i class="fas fa-cog me-2"></i> Configuración
                 </a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li>
-                    <form method="POST" action="{{ route('logout') }}">
+                    <form method="POST" action="#">
                         @csrf
                         <button type="submit" class="dropdown-item text-danger">
-                            <i class="bi bi-power me-2" style="color: var(--color-orange);"></i> Cerrar Sesión
+                            <i class="fas fa-sign-out-alt me-2"></i> Cerrar Sesión
                         </button>
                     </form>
                 </li>
             </ul>
         </div>
     </div>
-</nav>
+</header>
